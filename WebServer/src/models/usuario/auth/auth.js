@@ -11,6 +11,7 @@ export async function modelsUsuarioAuthAutenticar({ email }) {
     }
 
 }
+/*
 export async function modelsUsuarioAuthInteresse({ interesse }) {
     try {
         let instrucao = `select count(*) from usuario where interesse ="${interesse}";`
@@ -20,4 +21,4 @@ export async function modelsUsuarioAuthInteresse({ interesse }) {
         throw " ERRO NO BANCO "
     }
 
-}
+} */
