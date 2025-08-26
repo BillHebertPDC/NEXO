@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXO - Login</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div id="cabecalho">
+        <div class="cabecalho-container">
+            <div class="logo"><img id="logo" src="imgs/Nexo-Logo.png" alt="Nexo-Logo"></div>
+            <div class="cabecalho-links" id="cabecalhoLinks">
+                <a href="#">Início</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="login">
+        <div class="login-container">
+            <div class="imagem-login">
+                <div class="imagem-conteudo">
+                    <h1>Bem vindo de volta!</h1>
+                    <h2>Faça seu login e veja os seus totens.</h2>
+                </div>
+            </div>
+            <div class="formulario-login">
+                <div class="formulario-conteudo">
+                    <h1>Portal do Cliente</h1>
+                    <div class="formulario">
+                        <form action="/login" method="post">
+                            <div class="formulario-grupo">
+                                <label for="id">ID:</label>
+                                <input type="number" id="id" name="id" required>
+                            </div>
+                            <div class="formulario-grupo">
+                                <label for="senha">Senha:</label>
+                                <input type="password" id="senha" name="senha" required>
+                            </div>
+                            <div class="formulario-botao">
+                                <a class="botao-login" onclick="">Entrar</a>
+                            </div>
+                        </form>
+                        <p>Ainda não tem uma conta? <a href="#">Cadastre-se agora</a>!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
