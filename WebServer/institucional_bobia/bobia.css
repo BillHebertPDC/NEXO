@@ -30,11 +30,12 @@ body{
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 20px 5%;
+    padding: 0px 5%;
     background: rgba(15, 15, 15, 0.8);
     backdrop-filter: blur(50px);
     z-index: 1000;
     transition: all 0.3s ease;
+    border-bottom: #a78bfa 2px solid;
 }
 
 .cabecalho-container {
@@ -84,11 +85,19 @@ body{
     width: 100%;
 }
 
+@font-face{
+    font-family:gendy;
+
+    /*Caso a fonte esteja na mesma pasta*/
+    src: url("../institucional_bobia/assets/fonts/gendy.otf");
+}
+
 .tituloBob h1 {
-    font-size: 3rem;
+    font-size: 6rem;
     text-align: center;
-    margin: 40px 0 20px 0;
+    margin: 40px 0 0 0;
     font-weight: bold;
+    font-family: gendy;
 }
 
 @media (max-width: 600px) {
@@ -105,6 +114,14 @@ body{
     min-height: 80vh;
 }
 
+textarea{
+    border-radius: 7px;
+    padding: 5PX;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
 #buttonResposta {
     padding: 10px;
     font-size: 20px;
@@ -118,4 +135,12 @@ body{
 }
 #buttonResposta:hover {
     background-color: var(--primaria-dark);
+}
+
+#pergunta{
+    width: 500px;
+}
+
+span{
+    color: #8b5cf6;
 }
