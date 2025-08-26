@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primaria: #8b5cf6;
+    --primaria-dark: #7c3aed;
+    --primaria-light: #a78bfa;
+    --secondaria: #06b6d4;
+    --preto: #0f0f0f;
+    --preto-light: #1a1a1a;
+    --texto: #ffffff;
+    --texto-secundario: #94a3b8;
+    --sucesso: #10b981;
+    --perigo: #ef4444;
+    --alerta: #f59e0b;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--preto);
+    color: var(--texto);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+#cabecalho {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 20px 5%;
+    background: var(--preto);
+    backdrop-filter: blur(50px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.cabecalho-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo img {
+    height: 100px;
+    width: auto;
+    display: block;
+}
+
+.cabecalho-links {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.cabecalho-links a {
+    color: var(--texto);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.cabecalho-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primaria-light);
+    transition: width 0.3s ease;
+}
+
+.cabecalho-links a:hover {
+    color: var(--texto);
+}
+
+.cabecalho-links a:hover::after {
+    width: 100%;
+}
+
+/* Formulário de Cadastro */
+
+
+#login {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.imagem-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 60%;
+    height: 100%;
+    background-color: var(--preto-light);
+}
+
+.imagem-conteudo {
+    margin-left: 12%;
+}
+
+.imagem-conteudo h1 {
+    font-size: 36px;
+}
+
+.imagem-conteudo h2 {
+    font-size: 28px;
+}
+
+.formulario-login {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    height: 100%;
+}
+
+.formulario-conteudo {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+
+.formulario {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.formulario p a {
+    color: var(--primaria);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.formulario a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primaria-light);
+    transition: width 0.3s ease;
+}
+
+.formulario a:hover {
+    color: var(--texto);
+}
+
+.formulario a:hover::after {
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 20px;
+}
+
+.formulario-grupo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.formulario-grupo input {
+    height: 40px;
+    width: 300px;
+    border-radius: 8px;
+    border-style: none;
+}
+
+.formulario-botao {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .formulario-botao button {
+    padding: 10px 25px;
+    border-style: none;
+    border-radius: 8px;
+} */
+
+.botao-login {
+    background: linear-gradient(135deg, var(--primaria), var(--primaria-dark));
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.botao-login::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2)transparent);
+    transition: left 0.5s ease;
+}
+
+.botao-login:hover::before {
+    left: 100%;
+}
+
+.botao-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+}
