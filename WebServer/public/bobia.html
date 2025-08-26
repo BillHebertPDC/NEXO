@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexo | Assistência de IA</title>
+    <link rel="stylesheet" href="bobia.css">
+</head>
+<body>
+    <div id="carregamento-animacao">
+        <div id="spinner"></div>
+    </div>
+
+    <div id="cabecalho">
+        <div class="cabecalho-container">
+            <div class="logo"><img id="logo" src="imgs/Nexo-Logo.png" alt="Nexo-Logo"></div>
+            <div class="cabecalho-links" id="cabecalhoLinks">
+                <a href="#recursos">Recursos</a>
+                <a href="#calculadora">Calculadora ROI</a>
+                <a href="#clientes">Clientes</a>
+                <a href="#depoimentos">Depoimentos</a>
+                <a href="#contato">Contato</a>
+                <a href="#" class="botao-principal">Cadastro</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="bobia">
+        <div class="container">
+            <div class="tituloBob"> 
+                <h1> BobIA</h1>
+            </div>
+
+            <h2>Assistência de IA para Suporte!</h2>
+
+            <textarea id="pergunta" type="text" placeholder="Qual sua dúvida?"></textarea>
+
+            <button id="buttonResposta" onclick="gerarResposta()">Gerar Resposta</button>
+
+            <h4>Resposta da IA:</h4>
+
+            <div id="resposta"></div>
+        </div>
+    </div>
+
+</body>
+<script>
+    async function gerarResposta() {
+        const respostaDiv = document.getElementById('resposta');
+        respostaDiv.innerHTML = '';
+        const pergunta = document.getElementById('pergunta').value;
+
+        try {
+            const response = await fetch('/perguntar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ pergunta })
+            });
+            const data = await response.json();
+            typeWriter(respostaDiv, data.resultado || 'Nenhuma resposta recebida.');
+        } catch (e) {
+            typeWriter(respostaDiv, 'Erro ao obter resposta da IA.');
+        }
+    }
+
+    function typeWriter(element, text, i = 0) {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            setTimeout(() => typeWriter(element, text, i + 1), 25);
+        }
+    }
+</script>
+</html>

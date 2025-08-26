@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primaria: #8b5cf6;
+    --primaria-dark: #7c3aed;
+    --primaria-light: #a78bfa;
+    --secondaria: #06b6d4;
+    --preto: #0f0f0f;
+    --preto-light: #1a1a1a;
+    --texto: #ffffff;
+    --texto-secundario: #94a3b8;
+    --sucesso: #10b981;
+    --perigo: #ef4444;
+    --alerta: #f59e0b;
+}
+
+body{
+    font-family:'Inter', sans-serif;
+    background: var(--preto);
+    color: var(--texto);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+#cabecalho {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 5%;
+    background: rgba(15, 15, 15, 0.8);
+    backdrop-filter: blur(50px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.cabecalho-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo img {
+    height: 100px;
+    width: auto;
+    display: block;
+}
+
+.cabecalho-links {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.cabecalho-links a {
+    color: var(--texto-secundario);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.cabecalho-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primaria-light);
+    transition: width 0.3s ease;
+}
+
+.cabecalho-links a:hover {
+    color: var(--texto);
+}
+
+.cabecalho-links a:hover::after {
+    width: 100%;
+}
+
+.tituloBob h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin: 40px 0 20px 0;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .tituloBob h1 {
+        font-size: 2rem;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+#buttonResposta {
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 10px;
+    background-color: var(--preto-light);
+    color: var(--texto);
+    border-color: var(--primaria-dark);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#buttonResposta:hover {
+    background-color: var(--primaria-dark);
+}

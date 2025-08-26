@@ -1,3 +1,4 @@
+console.log("111")
 import { createApp } from './src/app/app.js';
 import 'dotenv/config';
 const port = process.env.PORT;

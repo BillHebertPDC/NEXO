@@ -1,6 +1,6 @@
 import { log } from "../../utils/log.js";
 import { servicesUsuarioCreate } from "../../services/usuario/create.js";
-import bcrypt from "bcrypt"
+//import bcrypt from "bcrypt"
 
 export const controllersUsuarioCreate = async (req, res, next) => {
     try {

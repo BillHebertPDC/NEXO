@@ -1,25 +1,26 @@
 import express from 'express'
-import appSession from './app-session.js'
+//import appSession from './app-session.js'
 import appMiddlewares from './app-middlewares.js'
 import appStatic from './app-static.js'
 import appRoutes from './app-routes.js'
 import { error } from '../middlewares/erro.js'
+import { GoogleGenAI } from '@google/genai'
 
 var chatIA = new GoogleGenAI({ apiKey: process.env.CHAVE_BOBIA });
-var { GoogleGenAI } = require("@google/genai");
 
 export function createApp() {
+    console.log("qualquer coisa")
     const app = express()
     app.use(express.json())
     app.use(express.urlencoded({ extended: true }))
-    appSession(app)
+    // appSession(app)
     appMiddlewares(app)
     appStatic(app)
     appRoutes(app)
     app.use(error)
     return app
 }
-
+/*
 app.post("/perguntar", async (req, res) => {
     const pergunta = req.body.pergunta;
     try {
@@ -46,4 +47,4 @@ async function gerarResposta(mensagem) {
         console.error(error);
         throw error;
     }
-}
+}*/

@@ -1,9 +1,6 @@
-import jwt from "jsonwebtoken"
-import bcrypt from "bcrypt"
+
 import 'dotenv/config';
-import { modelsUsuarioAuthAutenticar, modelsUsuarioAuthInteresse } from "../../../models/usuario/auth/auth.js"
-import { modelsQuizzMax } from "../../../models/quizz/create.js";
-import { log } from "../../../utils/log.js"
+
 export const servicesUsuarioAuthAutenticar = async ({ email, senha }) => {
     /*
     try {

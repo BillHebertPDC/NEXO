@@ -1,10 +1,10 @@
 import express from "express"
-//import controllersUsuarioRead from "../../controllers/usuario/read.js"
-import { controllersUsuarioCreate } from "../../controllers/usuario/create.js"
-import { controllersUsuarioUpdate } from "../../controllers/usuario/update.js"
-import { controllersUsuarioAuthCreate } from "../../controllers/usuario/auth/auth.js"
+//import controllersUsuarioRead from "../../controllers/usuarios/read.js"
+import { controllersUsuarioCreate } from "../../controllers/usuarios/create.js"
+import { controllersUsuarioUpdate } from "../../controllers/usuarios/update.js"
+import { controllersUsuarioAuthCreate } from "../../controllers/usuarios/auth/auth.js"
 
-//import controllersUsuarioDelete from "../../controllers/usuario/delete.js"
+//import controllersUsuarioDelete from "../../controllers/usuarios/delete.js"
 
 const routerUsuarioIndex = express.Router();
 //routerUsuarioIndex.get("/", controllersUsuarioRead)
