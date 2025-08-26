@@ -1,6 +1,8 @@
-import { log } from "../../utils/log.js"
+import { GoogleGenAI } from '@google/genai'
 
-async function gerarResposta(mensagem) {
+var chatIA = new GoogleGenAI({ apiKey: process.env.CHAVE_BOBIA });
+
+export async function gerarResposta(mensagem) {
     try {
         const modeloIA = chatIA.models.generateContent({
             model: "gemini-2.0-flash",
@@ -16,4 +18,4 @@ async function gerarResposta(mensagem) {
         console.error(error);
         throw error;
     }
-}
+} 

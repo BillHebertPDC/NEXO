@@ -51,7 +51,7 @@
         const pergunta = document.getElementById('pergunta').value;
 
         try {
-            const response = await fetch('/perguntar', {
+            const response = await fetch('/bobia/perguntar', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
