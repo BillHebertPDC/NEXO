@@ -30,7 +30,7 @@ body {
     position: absolute;
     top: 0;
     width: 100%;
-    padding: 20px 5%;
+    padding: 5px 5%;
     background: var(--preto);
     backdrop-filter: blur(50px);
     z-index: 1000;
@@ -84,9 +84,6 @@ body {
     width: 100%;
 }
 
-/* Formulário de Cadastro */
-
-
 #login {
     height: 100vh;
     display: flex;
@@ -111,7 +108,7 @@ body {
     align-items: flex-start;
     width: 60%;
     height: 100%;
-    background-color: var(--preto-light);
+    background-color: #49025800;
 }
 
 .imagem-conteudo {
@@ -119,7 +116,9 @@ body {
 }
 
 .imagem-conteudo h1 {
+    margin-top: 130px;
     font-size: 36px;
+    color: var(--primaria);
 }
 
 .imagem-conteudo h2 {
@@ -190,7 +189,7 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
 }
 
 .formulario-grupo input {
@@ -198,6 +197,7 @@ form {
     width: 300px;
     border-radius: 8px;
     border-style: none;
+    padding: 10px;
 }
 
 .formulario-botao {
@@ -206,12 +206,6 @@ form {
     justify-content: center;
     align-items: center;
 }
-
-/* .formulario-botao button {
-    padding: 10px 25px;
-    border-style: none;
-    border-radius: 8px;
-} */
 
 .botao-login {
     background: linear-gradient(135deg, var(--primaria), var(--primaria-dark));
@@ -244,4 +238,66 @@ form {
 .botao-login:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+}
+
+.imagem-conteudo {
+    position: relative;
+}
+
+.floating-element {
+    position: absolute;
+    background: linear-gradient(135deg, var(--primaria), var(--secondaria));
+    border-radius: 50%;
+    opacity: 0.1;
+    animation: float 8s ease-in-out infinite; 
+    box-shadow: 0 0 15px var(--primaria-dark);
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(15px, -15px) scale(1.05); 
+    }
+    50% {
+        transform: translate(0, 30px) scale(1);
+    }
+    75% {
+        transform: translate(-15px, -15px) scale(0.95); 
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
+.floating-element:nth-child(1) {
+    width: 80px;
+    height: 80px;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.floating-element:nth-child(2) {
+    width: 120px;
+    height: 120px;
+    top: 45%;
+    left: 75%;
+    animation-delay: 2.5s; 
+}
+
+.floating-element:nth-child(3) {
+    width: 60px;
+    height: 60px;
+    top: 100%;
+    left: 25%;
+    animation-delay: 5s; 
+}
+
+.floating-element:nth-child(4) {
+    width: 90px;
+    height: 90px;
+    top: 0%;
+    left: 50%;
+    animation-delay: 6.5s;
 }
