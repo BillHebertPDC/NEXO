@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira Realista - Nexo</title>
+    <link rel="stylesheet" href="css/calculadora_financeira.css">
+</head>
+
+<body>
+
+    <div id="cabecalho">
+        <div class="cabecalho-container">
+            <div class="logo"><a href="index.html"><img id="logo" src="./assets/imgs/Nexo-Logo.png" alt="Nexo-Logo"></a></div>
+            <div class="cabecalho-links">
+                <a href="index.html#recursos">Recursos</a>
+                <a href="index.html#calculadora">Calculadora ROI</a>
+                <a href="index.html#clientes">Clientes</a>
+                <a href="index.html#comentarios">Depoimentos</a>
+                <a href="index.html#contado">Contato</a>
+                <a href="#" class="botao-principal">Cadastro</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="sobre-nos-calc">
+        <div class="sobre-nos-calc-texto">
+            <h2>Sobre nós</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex enim nam distinctio! Suscipit vitae dicta harum, illo ipsa provident. Impedit repellat natus reiciendis deleniti repudiandae exercitationem odit, beatae facere qui?</p>
+        </div>
+        <div class="sobre-nos-calc-imagem">
+            <img src="./assets/imgs/totem-numerique-digital-55-pouces-jpg.webp" alt="Sobre nós" style="max-width:180px; border-radius:24px; box-shadow:0 10px 30px rgba(139,92,246,0.12);">
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="calculator-wrapper">
+            <div class="calculator-container">
+                <h1 class="calculator-title">Calculadora Financeira</h1>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>
+                            Quantidade de totens que você possui
+                        </label>
+                        <input type="number" id="ipt_qtd_totem" placeholder="Ex: 20" min="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            Downtime médio por totem (horas offline)
+                        </label>
+                        <input type="number" step="0.5" id="ipt_downtime" placeholder="Ex: 4.0" min="0">
+                    </div>
+
+                    <div class="form-group input-icon">
+                        <label>
+                            Valor perdido por totem offline por hora
+                        </label>
+                        <input type="number" id="ipt_valor_totem_off" placeholder="Ex: 25.00" min="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            Quantidade de visitas para inspeção preventiva por mês
+                        </label>
+                        <input type="number" id="ipt_qtd_inspecao" placeholder="Ex: 10" min="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            Tempo médio de cada inspeção (horas)
+                        </label>
+                        <input type="number" step="0.5" id="ipt_tempo_inspecao" placeholder="Ex: 2.5" min="0">
+                    </div>
+
+                    <div class="form-group input-icon">
+                        <label>
+                            Custo por hora do técnico responsável
+                        </label>
+                        <input type="number" step="0.01" id="ipt_valor_hora_tecnico" placeholder="Ex: 50.00" min="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            Quantidade de visitas técnicas corretivas por mês
+                        </label>
+                        <input type="number" id="ipt_qtd_manutencao" placeholder="Ex: 5" min="0">
+                    </div>
+
+                    <div class="form-group input-icon">
+                        <label>
+                            Valor médio por manutenção corretiva
+                        </label>
+                        <input type="number" id="ipt_valor_manutencao" placeholder="Ex: 500.00" min="0">
+                    </div>
+                </div>
+
+                <button class="calculate-button" onclick="calcular()">
+                    Calcular Economia
+                </button>
+            </div>
+
+            <div class="results-container">
+                <h3 class="results-title">Resultados Financeiros</h3>
+                
+                <div class="loading" id="loading">
+                    Calculando...
+                </div>
+                
+                <div id="resultados" class="empty-state">
+                    Preencha os campos e clique em "Calcular Economia" para ver os resultados.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calcular() {
+            // Mostrar loading
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('resultados').innerHTML = '';
+
+                try {
+                    // Coletar dados dos inputs
+                    const qtdInspecao = Number(document.getElementById("ipt_qtd_inspecao").value) || 0;
+                    const tempoInspecao = Number(document.getElementById("ipt_tempo_inspecao").value) || 0;
+                    const valorHoraTecnico = Number(document.getElementById("ipt_valor_hora_tecnico").value) || 0;
+                    const qtdManutencao = Number(document.getElementById("ipt_qtd_manutencao").value) || 0;
+                    const valorManutencao = Number(document.getElementById("ipt_valor_manutencao").value) || 0;
+                    const qtdTotens = Number(document.getElementById("ipt_qtd_totem").value) || 0;
+                    const downtime = Number(document.getElementById("ipt_downtime").value) || 0;
+                    const valorTotemOff = Number(document.getElementById("ipt_valor_totem_off").value) || 0;
+
+                    // Validar se pelo menos alguns campos foram preenchidos
+                    if (!qtdInspecao && !qtdManutencao && !qtdTotens) {
+                        throw new Error("Preencha pelo menos alguns campos para calcular.");
+                    }
+
+                    // Cálculos detalhados
+                    const custoInspecaoMensal = qtdInspecao * tempoInspecao * valorHoraTecnico;
+                    const custoInspecaoAnual = custoInspecaoMensal * 12;
+                    
+                    // Estimativa: inspeções preventivas podem evitar 40% das manutenções corretivas
+                    const manutencaoEvitavelMensal = qtdManutencao * valorManutencao * 0.4;
+                    const manutencaoEvitavelAnual = manutencaoEvitavelMensal * 12;
+                    
+                    // Cálculo do downtime
+                    const perdaDowntimeMensal = qtdTotens * downtime * valorTotemOff;
+                    const perdaDowntimeAnual = perdaDowntimeMensal * 12;
+
+                    // ROI - considerando que as inspeções preventivas reduzem downtime em 60%
+                    const reducaoDowntime = perdaDowntimeMensal * 0.6;
+                    const economiaLiquidaMensal = manutencaoEvitavelMensal + reducaoDowntime - custoInspecaoMensal;
+                    const economiaLiquidaAnual = economiaLiquidaMensal * 12;
+
+                    // ROI percentual
+                    const roiPercentual = custoInspecaoMensal > 0 ? 
+                        ((economiaLiquidaMensal / custoInspecaoMensal) * 100) : 0;
+
+                    // Gerar HTML dos resultados
+                    const resultadosHTML = `
+                        <div class="result-item">
+                            <div class="result-label">Custo mensal com inspeções preventivas</div>
+                            <div class="result-value">R$ ${custoInspecaoMensal.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</div>
+                        </div>
+
+                        <div class="result-item">
+                            <div class="result-label">Economia mensal - manutenções evitadas</div>
+                            <div class="result-value">R$ ${manutencaoEvitavelMensal.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</div>
+                        </div>
+
+                        <div class="result-item">
+                            <div class="result-label">Economia mensal - redução de downtime</div>
+                            <div class="result-value">R$ ${reducaoDowntime.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</div>
+                        </div>
+
+                        <div class="result-item">
+                            <div class="result-label">Perda atual por downtime (mensal)</div>
+                            <div class="result-value" style="color: var(--perigo);">-R$ ${perdaDowntimeMensal.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</div>
+                        </div>
+
+                        <div class="result-item total-result">
+                            <div class="result-label"> Economia líquida mensal</div>
+                            <div class="result-value">R$ ${economiaLiquidaMensal.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</div>
+                        </div>
+
+                        <div class="result-item total-result">
+                            <div class="result-label"> ROI das inspeções preventivas</div>
+                            <div class="result-value">${roiPercentual.toFixed(1)}%</div>
+                        </div>
+
+                        <div class="result-item" style="background: rgba(16, 185, 129, 0.1); border-color: var(--sucesso);">
+                            <div class="result-label"> Economia projetada anual</div>
+                            <div class="result-value" style="color: var(--sucesso);">R$ ${economiaLiquidaAnual.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</div>
+                        </div>
+                    `;
+
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('resultados').innerHTML = resultadosHTML;
+
+                } catch (error) {
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('resultados').innerHTML = `
+                        <div class="result-item" style="background: rgba(239, 68, 68, 0.1); border-color: var(--perigo);">
+                            <div class="result-label" style="color: var(--perigo);">Erro no cálculo</div>
+                            <div class="result-value" style="color: var(--perigo);">${error.message}</div>
+                        </div>
+                    `;
+                }
+            }
+    </script>
+</body>
+
+</html>
