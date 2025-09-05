@@ -61,15 +61,7 @@ body{
     color: var(--texto-secundario);
     text-decoration: none;
     font-weight: 500;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.cabecalho-links a {
-    color: var(--texto-secundario);
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
+    transition: color 0.3s, box-shadow 0.3s, background 0.3s, transform 0.3s;
     position: relative;
 }
 
@@ -89,7 +81,9 @@ body{
 }
 
 .cabecalho-links a:hover {
-    color: var(--branco);
+    color: var(--primaria-dark);
+    transition: left 0.5s ease;
+    transform: translateY(-2px);
 }
 
 .cabecalho-links a:hover::after {
@@ -107,6 +101,21 @@ body{
     display: inline-block;
     position: relative;
     overflow: hidden;
+}
+
+.botao-secundario {
+    background: #fff;
+    border: 2px solid var(--primaria);
+    color: var(--primaria);
+    padding: 7px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.12);
 }
 
 .botao-principal::before {
@@ -129,18 +138,6 @@ body{
     box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
 }
 
-.botao-secundario {
-    background: transparent;
-    border: 2px solid var(--primaria);
-    color: var(--primaria);
-    padding: 7px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
 .botao-secundario::before {
     content: '';
     position: absolute;
@@ -148,18 +145,22 @@ body{
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2)transparent);
+    background: linear-gradient(90deg, transparent, rgba(139,92,246,0.08), transparent);
     transition: left 0.5s ease;
 }
 
-.botao-secundario::before {
+.botao-secundario:hover::before {
     left: 100%;
 }
 
 .botao-secundario:hover {
     background: var(--primaria);
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+}
+
+#cadastro:hover{
+    color: var(--branco);
 }
 
 .botoes {
@@ -230,32 +231,40 @@ body{
 }
 
 
-.sobre-nos-container{
+.sobre-nos-container {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 340px;
 }
 
 .sobre-nos-imagem {
     flex: 1;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 100%;
+    margin-left: 0px;
+    min-height: 320px;
 }
 .sobre-nos-imagem img {
-    max-width: 180px;
-    width: 100%;
+    height: 320px;
+    width: auto;
     border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.12);
+    padding: 0px 10px;
+    box-shadow: 0 10px 30px rgba(85, 17, 87, 0.291);
 }
 
 .sobre-nos-texto {
     flex: 2;
-    color: var(--texto);
-    font-size: 1.2rem;
-    line-height: 1.7;
-    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .sobre-nos-texto h3{
-    font-size: 30px;
+    font-size: 50px;
     color: var(--primaria);
 }
 
@@ -277,15 +286,20 @@ body{
         gap: 20px;
         padding: 30px 5%;
     }
-    .sobre-nos-imagem {
+    .nos-imagem {
         justify-content: center;
+        align-items: center;
         margin-bottom: 10px;
+        min-height: auto;
     }
-    .sobre-nos-imagem img {
-        max-width: 120px;
+    .nos-imagem img {
+        max-height: 120px;
+        height: auto;
     }
-    .sobre-nos-texto {
-        padding-left: 0;
+    .sobre-nos-container {
+        flex-direction: column;
+        align-items: center;
+        min-height: auto;
     }
 }
 .recursos {
@@ -328,23 +342,24 @@ body{
 }
 
 .recurso-card {
-    background: rgba(26, 26, 26, 0.5);
-    backdrop-filter: blur(10px);
+    background: var(--branco);
     border-radius: 20px;
     padding: 40px 30px;
     transition: all 0.3s ease;
     position: relative;
+    border: 2px solid var(--primaria);
     overflow: hidden;
+    color: var(--texto);
 }   
 
 .recurso-card::before {
     content: '';
     position: absolute;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.214) 0%, transparent 70%);
     top: -100%;
     left: -100%;
     width: 300%;
     height: 300%;
-    background: radial-gradient(circle, rgba(206, 117, 210, 0.214) 0%, transparent 70%);
     transition: all 0.5s ease;
 }
 
@@ -356,7 +371,7 @@ body{
 .recurso-card:hover {
     transform: translateY(-10px);
     border-color: var(--primaria);
-    box-shadow: 0 20px 40px rgba(150, 12, 204, 0.425);
+    box-shadow: 0 20px 40px rgba(164, 40, 214, 0.21);
 }
 
 .recurso-icon {
