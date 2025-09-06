@@ -26,15 +26,26 @@ body{
     line-height: 1.6;
 }
 
+
 #cabecalho {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 1px 5%;
     background-color: var(--branco);
     z-index: 1000;
     transition: all 0.3s ease;
     border-bottom: 2px solid var(--primaria);
+    left: 0;
+}
+
+.cabecalho-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 .cabecalho-container {
@@ -53,7 +64,7 @@ body{
 
 .cabecalho-links {
     display: flex;
-    gap: 40px;
+    gap: 24px;
     align-items: center;
 }
 
@@ -111,7 +122,7 @@ body{
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: all 1s ease;
     display: inline-block;
     position: relative;
     overflow: hidden;
@@ -146,7 +157,7 @@ body{
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(139,92,246,0.08), transparent);
-    transition: left 0.5s ease;
+    transition: left 1s ease;
 }
 
 .botao-secundario:hover::before {
@@ -165,7 +176,7 @@ body{
 
 .botoes {
     display: flex;
-    gap: 20px;
+    gap: 14px;
     animation: fadeInUp 1s ease 0.4s both;
     justify-content: center;
 }
@@ -178,21 +189,16 @@ body{
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 120px 5% 80px;
-    position: relative;
-    z-index: 1;
-}
-
-.inicio::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 50%;
-    z-index: 2;
-    pointer-events: none;
+        justify-content: center;
+        padding: 120px 5% 80px;
+        position: relative;
+        z-index: 1;
+        background-image:
+            linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 170px),
+            url('../assets/imgs/Captura\ de\ tela\ 2025-09-06\ 031633.png');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
 }
 
 .inicio-container {
@@ -221,13 +227,14 @@ body{
     width: 20px;
 }
 
-.sobre-nos{
+.sobre-nos {
     display: flex;
     align-items: center;
     gap: 40px;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 80px auto;
     padding: 40px 5%;
+    box-sizing: border-box;
 }
 
 
@@ -245,17 +252,18 @@ body{
     justify-content: flex-end;
     align-items: flex-end;
     height: 100%;
-    margin-left: 0px;
     min-height: 320px;
 }
 .sobre-nos-imagem img {
-    height: 320px;
+    height: 400px;
     width: auto;
     border-radius: 24px;
-    padding: 0px 10px;
-    box-shadow: 0 10px 30px rgba(85, 17, 87, 0.291);
+    background-image:url('../assets/imgs/totem-numerique-digital-55-pouces-jpg.webp');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    box-shadow: 0 8px 32px var(--primaria);
 }
-
 .sobre-nos-texto {
     flex: 2;
     display: flex;
@@ -269,39 +277,11 @@ body{
 }
 
 .sobre-nos-texto p {
+    font-size: 17px;
     margin-bottom: 18px;
     color: var(--texto-secundario);
 }
 
-.nos-imagem img {
-    height: 400px;
-    width: auto;
-    border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.12);
-}
-
-@media (max-width: 900px) {
-    .sobre-nos {
-        flex-direction: column;
-        gap: 20px;
-        padding: 30px 5%;
-    }
-    .nos-imagem {
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 10px;
-        min-height: auto;
-    }
-    .nos-imagem img {
-        max-height: 120px;
-        height: auto;
-    }
-    .sobre-nos-container {
-        flex-direction: column;
-        align-items: center;
-        min-height: auto;
-    }
-}
 .recursos {
     padding: 100px 5%;
     max-width: 1400px;
@@ -314,6 +294,14 @@ body{
 }
 
 .recursos-label {
+    color: var(--primaria);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.clientes-label, .section-label {
     color: var(--primaria);
     font-weight: 600;
     text-transform: uppercase;
@@ -375,8 +363,8 @@ body{
 }
 
 .recurso-icon {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 75px;
     background: linear-gradient(135deg, var(--primaria), var(--primaria-dark));
     border-radius: 15px;
     display: flex;
@@ -384,6 +372,19 @@ body{
     justify-content: center;
     font-size: 24px;
     margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.recurso-icon img,
+.recursos-icone {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+    filter: brightness(0) invert(1);
 }
 
 .recurso-title {
@@ -397,10 +398,27 @@ body{
     line-height: 1.8;
 }
 
+.recursos-icone{
+    height: 50px;
+    width: auto;
+}
+
 .calculadora-secao {
     padding: 100px 5%;
     background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
     position: relative;
+}
+
+.calculadora-secao::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+    pointer-events: none;
+    background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    z-index: 2;
 }
 
 .calculadora-container {
@@ -472,6 +490,31 @@ body{
     background: rgba(139, 92, 246, 0.15);
 }
 
+#btnCalcularROI {
+    background: linear-gradient(135deg, var(--primaria), var(--primaria-dark));
+    color: var(--branco);
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    transition: box-shadow 0.3s, background 0.3s, color 0.3s, transform 0.3s;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+#btnCalcularROI:hover::before {
+    left: 100%;
+}
+#btnCalcularROI:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+}
+
 .calc-slider {
     width: 100%;
     margin-top: 15px;
@@ -523,7 +566,7 @@ body{
 }
 
 .resultado-value {
-    font-size: 2rem;
+    font-size: 30px;
     font-weight: 700;
 }
 
@@ -532,13 +575,20 @@ body{
 }
 
 .resultado-negative {
-    color: var(--alerta);
+    color: var(--perigo);
 }
 
 .secao_diagrama img{
     height: 350px;
     width: auto;
     margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .secao_diagrama img {
+        height: 180px;
+        max-width: 100%;
+    }
 }
 
 .secao_diagrama{
@@ -548,15 +598,15 @@ body{
 }
 
 .clientes {
-    padding: 100px 5%;
+    padding: 60px 5% 30px 5%;
     text-align: center;
 }
 
 .cliente-logo {
-    height: 60px;
-    max-height: 60px;
-    width: 120px;
-    max-width: 120px;
+    height: 200px;
+    max-height: 200px;
+    width: 200px;
+    max-width: 200px;
     object-fit: contain;
     display: block;
     margin: 0 auto;
@@ -568,7 +618,7 @@ body{
 .cliente-logo:hover {
     filter: grayscale(0%);
     opacity: 1;
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 .swiper {
@@ -586,7 +636,7 @@ body{
 }
 
 .cliente-logo {
-    height: 60px;      /* todos ficam iguais */
+    height: 300px;      /* todos ficam iguais */
     width: auto;       /* mantém proporção */
     object-fit: contain;
     transition: all 0.3s ease;
@@ -597,7 +647,7 @@ body{
 }
 
 .comentarios {
-    padding: 100px 5%;
+    padding: 40px 5% 60px 5%;
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -610,7 +660,7 @@ body{
 }
 
 .comentario-card {
-    background: rgba(26, 26, 26, 0.5);
+    background: rgba(223, 222, 222, 0.727);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 30px;
@@ -643,10 +693,22 @@ body{
 }
 
 .autor-avatar {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--primaria), var(--secondaria));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.autor-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
 }
 
 .autor-info {
@@ -677,6 +739,10 @@ body{
     padding: 80px 60px;
     border: 1px solid rgba(139, 92, 246, 0.3);
     backdrop-filter: blur(10px);
+}
+
+#falar-com-especialista:hover{
+    color: var(--branco);
 }
 
 .contado h2 {
@@ -772,3 +838,27 @@ footer {
     padding: 60px 30px;
 }
 }
+
+@media (max-width: 900px) {
+    .sobre-nos {
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px 5%;
+    }
+    .nos-imagem {
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+        min-height: auto;
+    }
+    .nos-imagem img {
+        max-height: 120px;
+        height: auto;
+    }
+    .sobre-nos-container {
+        flex-direction: column;
+        align-items: center;
+        min-height: auto;
+    }
+}
+

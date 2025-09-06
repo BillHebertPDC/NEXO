@@ -12,6 +12,7 @@
         <div class="cabecalho-container">
             <div class="logo"><img id="logo" src="./assets/imgs/Nexo-Logo.png" alt="Nexo-Logo"></div>
             <div class="cabecalho-links" id="cabecalhoLinks">
+                <a href="#sobre-nos">Sobre nós</a>
                 <a href="#recursos">Recursos</a>
                 <a href="#calculadora">Calculadora ROI</a>
                 <a href="#clientes">Clientes</a>
@@ -32,16 +33,16 @@
         </div>
     </div>
 
-    <div class="sobre-nos">
+    <div class="sobre-nos" id="sobre-nos">
         <div class="sobre-nos-container">
             <div class="sobre-nos-texto">
                 <h3>Sobre nós</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex enim nam distinctio! Suscipit vitae dicta harum, illo ipsa provident. Impedit repellat natus reiciendis deleniti repudiandae exercitationem odit, beatae facere qui?</p>
+                <p>Na Nexo, acreditamos que a tecnologia é a ponte que conecta ideias ao futuro. Somos uma empresa focada em desenvolver soluções digitais inovadoras que unem simplicidade, eficiência e impacto real para nossos clientes.</p>
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio veritatis consequuntur molestias inventore natus, vitae, rerum dolores qui voluptatibus autem iusto, obcaecati ipsum dignissimos nemo nesciunt repellendus doloremque maiores cupiditate!</p>
+                <p>Nosso propósito é transformar desafios em oportunidades, entregando sistemas inteligentes, confiáveis e fáceis de usar. Trabalhamos lado a lado com empresas que buscam modernizar seus processos, otimizar resultados e criar experiências digitais de alto valor.</p>
             </div>
             <div class="sobre-nos-imagem">
-                <img src="assets/imgs/totem-numerique-digital-55-pouces-jpg.webp" alt="">
+                <img src="assets/imgs/totem-nexo-removebg-preview.png" alt="">
             </div>
         </div>
     </div>
@@ -54,34 +55,34 @@
         </div>
         <div class="recusos-container">
             <div class="recurso-card">
-                <div class="recurso-icon">📊</div>
+                <div class="recurso-icon"><img src="assets/imgs/icones/painel.png" alt=""></div>
                 <h3 class="recurso-titulo">Monitoramento 24/7</h3>
                 <p class="recurso-descricao">Acompanhe CPU, memória, disco e rede em tempo real. Receba alertas instantâneos sobre qualquer anomalia antes que se torne um problema.</p>
             </div>
             <div class="recurso-card">
-                <div class="recurso-icon">⚠️</div>
+                <div class="recurso-icon"><img src="assets/imgs/icones/perigo.png" alt=""></div>
                 <h3 class="recurso-titulo">Alertas Inteligentes</h3> <!--se por "recusos" aumenta o tamanho-->
                 <p class="recurso-descricao">Receba notificações instantâneas de falhas ou anomalias e tome decisões rápidas para evitar downtime.</p>
             </div>
             <div class="recurso-card">
-                <div class="recurso-icon">🌐</div>
+                <div class="recurso-icon"><img src="assets/imgs/icones/smartphone.png" alt=""></div>
                 <h3 class="recurso-titulo">Controle Remoto</h3>
                 <p class="recurso-descricao">Reinicie, atualize ou configure qualquer totem à distância, de maneira rápida e segura.</p>
             </div>
             <div class="recurso-card">
-                <div class="recurso-icon">🛎️</div>
+                <div class="recurso-icon"><img src="assets/imgs/icones/suporte-tecnico.png" alt=""></div>
                 <h3 class="recurso-titulo">Chamados e Suporte</h3>
                 <p class="recurso-descricao">Registre, acompanhe e gerencie chamados de suporte de cada totem, agilizando soluções e manutenção.</p>
             </div>
             <div class="recurso-card">
-                <div class="recurso-icon">🔐</div>
+                <div class="recurso-icon"><img src="assets/imgs/icones/escudo-de-seguranca.png" alt=""></div>
                 <h3 class="recurso-titulo">Segurança Robusta</h3>
                 <p class="recurso-descricao">Proteção completa com criptografia avançada, autenticação forte e logs de auditoria de todos os dispositivos.</p>
             </div>
             <div class="recurso-card">
-                <div class="recurso-icon">📊</div>
+                <div class="recurso-icon"><img src="assets/imgs/icones/plano.png" alt=""></div>
                 <h3 class="recurso-titulo">Relatórios e Análise</h3>
-                <p class="recurso-descricao">Dashboards detalhados e relatórios estratégicos para avaliar performance, uso e otimizar a operação dos tótens.</p>
+                <p class="recurso-descricao">Dashboards detalhados e relatórios estratégicos para avaliar performance, uso e otimizar a operação dos totens.</p>
             </div>
         </div>
     </div>
@@ -102,26 +103,27 @@
             <div class="calculadora-box">
                 <h3>Calculadora de ROI</h3>
                 <div class="calculadora-input-grupo">
-                    <label>Quantidade de Tótens</label>
+                    <label>Quantidade de Totens</label>
                     <div class="calculadora-input-wrapper">
-                        <input type="number" class="calculadora-input" id="totensInput" value="50" min="1">
-                        <input type="range" class="calc-slider" id="totensSlider" min="1" max="500" value="50">
+                        <input type="number" class="calculadora-input" id="totensInput" placeholder="Ex: 50" min="1">
+                        <input type="range" class="calc-slider" id="totensSlider" min="1" max="1000">
                     </div>
                 </div>
                 <div class="calculadora-input-grupo">
                     <label>Custo Médio por Visita Técnica (R$)</label>
                     <div class="calculadora-input-wrapper">
-                        <input type="number" class="calculadora-input" id="custoInput" value="350" min="100">
+                        <input type="number" class="calculadora-input" id="custoInput" min="100" placeholder="Ex: 350">
+                        <button id="btnCalcularROI">Calcular</button>
                     </div>
                 </div>
                 <div class="calc-resultado">
                     <div class="resultado-item">
                         <div class="resultado-label">Gasto Atual (Mensal)</div>
-                        <div class="resultado-value resultado-negative" id="gastoAtual">R$ 17.500</div>
+                        <div class="resultado-value resultado-negative" id="gastoAtual"></div>
                     </div>
                     <div class="resultado-item">
                         <div class="resultado-label">Economia com Nexo</div>
-                        <div class="resultado-value resultado-positive" id="economia">R$ 15.225</div>
+                        <div class="resultado-value resultado-positive" id="economia"></div>
                     </div>
                 </div>
             </div>
@@ -134,7 +136,7 @@
             <p>Como funciona o nosso negócio</p>
         </div>
         <div>
-            <img src="assets/imgs/Captura de tela 2025-09-05 133957.png" alt="">
+            <img src="assets/imgs/Gemini_Generated_Image_hexubrhexubrhexu.png" alt="">
         </div>
     </div>
 
@@ -144,25 +146,19 @@
         <div class="clientes-label">CLIENTES</div>
         <h2 class="clientes-title">Empresas que Confiam no Nexo</h2>
         <p class="clientes-description">
-        Mais de 500 empresas já transformaram sua gestão de tótens com nossa plataforma.
+        Mais de 500 empresas já transformaram sua gestão de totens com nossa plataforma.
         </p>
     </div>
 
     <!-- Slider -->
     <div class="swiper clientes-slider">
         <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="../public/assets/imgs/Clientes/cliente-logo-mdatotem.webp" alt="Mdatotem" class="cliente-logo" id="img_"></div>
-        <div class="swiper-slide"><img src="../public/assets/imgs/Clientes/cliente-logo-daitech-wisetech.png" alt="Daitech" class="cliente-logo" id="img_"></div>
-        <div class="swiper-slide"><img src="../public/assets/imgs/Clientes/cliente-logo-aopen.jpg" alt="Aopen" class="cliente-logo" id="img_"></div>
-        <div class="swiper-slide"><img src="../public/assets/imgs/Clientes/cliente-logo-futuremedia.png" alt="Futuremedia" class="cliente-logo" id="img_"></div>
-        <div class="swiper-slide"><img src="../public/assets/imgs/Clientes/cliente-logo-genialtec.png" alt="Genialtec" class="cliente-logo" id="img_"></div>
-        <div class="swiper-slide"><img src="../public/assets/imgs/Clientes/cliente-logo-lg.webp" alt="LG" class="cliente-logo" id="img_"></div>
-        <div class="swiper-slide"><img src="../public/assets/imgs/Clientes/cliente-logo-sansung.webp" alt="Samsung" class="cliente-logo" id="img_"></div>
-        <div class="swiper-slide"><img src="../public/assets/imgs/Clientes/cliente-logo-locarti.webp" alt="Locarti" class="cliente-logo" id="img_"></div>
-        <div class="swiper-slide"><img src="../public/assets/imgs/Clientes/cliente-logo-melhoretec.svg" alt="Melhoretec" class="cliente-logo" id="img_"></div>
-        <div class="swiper-slide"><img src="../public/assets/imgs/Clientes/cliente-logo-ncrvoyix.svg" alt="NCR Voyix" class="cliente-logo" id="img_"></div>
-        <div class="swiper-slide"><img src="../public/assets/imgs/Clientes/cliente-logo-wtotem.png" alt="Wtotem" class="cliente-logo" id="img_"></div>
-        <div class="swiper-slide"><img src="../public/assets/imgs/Clientes/cliente-logo-videosoft.png" alt="Videosoft" class="cliente-logo" id="img_"></div>
+        <div class="swiper-slide"><img src="../public/assets/imgs/Clientes/clientes-fictisios/biq.png" alt="Biq" class="cliente-logo" id="img_"></div>
+        <div class="swiper-slide"><img src="../public/assets/imgs/Clientes/clientes-fictisios/totemMix.png" alt="TotemMix" class="cliente-logo" id="img_"></div>
+        <div class="swiper-slide"><img src="../public/assets/imgs/Clientes/clientes-fictisios/smartTotem.png" alt="smartTotem" class="cliente-logo" id="img_"></div>
+        <div class="swiper-slide"><img src="../public/assets/imgs/Clientes/clientes-fictisios/NeoTotem.png" alt="NeoTotem" class="cliente-logo" id="img_"></div>
+        <div class="swiper-slide"><img src="../public/assets/imgs/Clientes/clientes-fictisios/interaPoint.png" alt="interaPoint" class="cliente-logo" id="img_"></div>
+        <div class="swiper-slide"><img src="../public/assets/imgs/Clientes/clientes-fictisios/nextStand.png" alt="nextStand" class="cliente-logo" id="img_"></div>
         </div>
     </div>
     </div>
@@ -180,10 +176,10 @@
                 <div class="comentario-estrela">⭐⭐⭐⭐⭐</div>
                 <p class="comentario-texto">"O Nexo revolucionou nossa operação. Reduzimos em 90% as paradas não programadas e aumentamos nossa receita em 35% no primeiro trimestre."</p>
                 <div class="comentario-autor">
-                    <div class="autor-avatar"></div>
+                    <div class="autor-avatar"> <img src="https://imgs.search.brave.com/nLEl2dwR531Gz-8ZHE0I9wB5bUjqtoQ9zsgzaoAfhSw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90b3MtZ3JhdGlz/L2Nsb3NlLWRlLXVt/LWhvbWVtLW5lZ3Jv/LXNvcnJpZGVudGUt/ZW0tZnJlbnRlLWEt/dW0tZnVuZG8tbWFy/cm9tLWNvbmNlaXRv/LWRlLWZlbGljaWRh/ZGVfMTgxNjI0LTUz/MjkxLmpwZz9zZW10/PWFpc19oeWJyaWQm/dz03NDAmcT04MA" alt=""></div>
                     <div class="autor-info">
                         <div class="autor-nome">Carlos Silva</div>
-                        <div class="autor-cargo">CTO - algum cliente</div>
+                        <div class="autor-cargo">CTO - InteraPoint</div>
                     </div>
                 </div>
             </div>
@@ -191,21 +187,21 @@
                 <div class="comentario-rating">⭐⭐⭐⭐⭐</div>
                 <p class="comentario-texto">"A previsão de falhas é impressionante. Conseguimos antecipar 95% dos problemas e nossa satisfação do cliente subiu para 98%."</p>
                 <div class="comentario-autor">
-                    <div class="autor-avatar"></div>
+                    <div class="autor-avatar"><img src="https://imgs.search.brave.com/gdv7fVEXIhYO6RAHVohibqbZOHedUDLho5DpcNSGfsw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90b3MtZ3JhdGlz/L211bGhlci1hc2lh/dGljYS1hLWZhemVy/LWNhbXBhbmhhLWRl/LWJlbGV6YS1lbXBv/ZGVyYWRvcmFfNDgy/MjU3LTc0NDU3Lmpw/Zz9zZW10PWFpc19o/eWJyaWQmdz03NDAm/cT04MA" alt=""></div>
                     <div class="autor-info">
                         <div class="autor-nome">Ana Costa</div>
-                        <div class="autor-cargo">Diretora de Operações - algum cliente</div>
+                        <div class="autor-cargo">Diretora de Operações - SmartTotem</div>
                     </div>
                 </div>
             </div>
             <div class="comentario-card">
                 <div class="comentario-rating">⭐⭐⭐⭐⭐</div>
-                <p class="comentario-texto">"ROI em apenas 2 meses! O suporte é excepcional e a plataforma é intuitiva. Melhor investimento que fizemos este ano."</p>
+                <p class="comentario-texto">"O suporte é excepcional e a plataforma é intuitiva. Melhor investimento que fizemos este ano."</p>
                 <div class="comentario-autor">
-                    <div class="autor-avatar"></div>
+                    <div class="autor-avatar"><img src="assets/imgs/Captura de tela 2025-09-06 030911.png" alt=""></div>
                     <div class="autor-info">
                         <div class="autor-nome">Roberto Lima</div>
-                        <div class="autor-cargo">CEO - algum cliente</div>
+                        <div class="autor-cargo">CEO - Biq</div>
                     </div>
                 </div>
             </div>
@@ -215,11 +211,11 @@
     <!-- Contado -->
     <div class="contado" id="contado">
         <div class="contado-container">
-            <h2>Pronto para Revolucionar sua Gestão de Tótens?</h2>
+            <h2>Pronto para Revolucionar sua Gestão de Totens?</h2>
             <p>Junte-se e aumente a sua eficiência em até 300%</p>
             <div class="botoes">
-                <a href="#" class="botao-principal">Começar Agora</a>
-                <a href="#" class="botao-secundario">Falar com Especialista</a>
+                <a href="cadastro2.html" class="botao-principal">Começar Agora</a>
+                <a href="#" class="botao-secundario" id="falar-com-especialista">Falar com Especialista</a>
             </div>
         </div>
     </div>
@@ -231,7 +227,7 @@
                 <div class="logo" style="display: flex; justify-content: center; align-items: center;">
                     <img id="logo" src="./assets/imgs/Nexo-Logo.png" alt="Nexo-Logo">
                 </div>
-                <p style="text-align: center;">A plataforma mais avançada de monitoramento e gestão de tótens do mercado. Transformando dados em decisões inteligentes desde 2025.</p>
+                <p style="text-align: center;">A plataforma mais avançada de monitoramento e gestão de totens do mercado. Transformando dados em decisões inteligentes desde 2025.</p>
             </div>
         </div>
         <div class="footer-final">
@@ -258,6 +254,38 @@
         1024: { slidesPerView: 5, spaceBetween: 40 },
         },
     });
+
+
+    // Calculadora ROI - index.html
+function calcularROIIndex() {
+    const qtdTotens = Number(document.getElementById("totensInput").value) || 0;
+    const custoVisita = Number(document.getElementById("custoInput").value) || 0;
+    const gastoAtual = qtdTotens * custoVisita;
+    const economia = gastoAtual * 0.87;
+    document.getElementById('gastoAtual').textContent = `R$ ${gastoAtual.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+    document.getElementById('economia').textContent = `R$ ${economia.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+}
+
+// Adiciona evento ao botão da calculadora ROI
+const btnCalcularROI = document.getElementById('btnCalcularROI');
+if (btnCalcularROI) {
+    btnCalcularROI.addEventListener('click', function(e) {
+        e.preventDefault();
+        calcularROIIndex();
+    });
+}
+
+// Sincroniza o slider com o input de quantidade de totens
+const totensInput = document.getElementById('totensInput');
+const totensSlider = document.getElementById('totensSlider');
+if (totensInput && totensSlider) {
+    totensSlider.addEventListener('input', () => {
+        totensInput.value = totensSlider.value;
+    });
+    totensInput.addEventListener('input', () => {
+        totensSlider.value = totensInput.value;
+    });
+}
 </script>
 
 
