@@ -1,40 +1,51 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 :root {
-    --primaria: #8b5cf6;
-    --primaria-dark: #7c3aed;
-    --primaria-light: #a78bfa;
-    --secondaria: #06b6d4;
-    --preto: #0f0f0f;
-    --preto-light: #1a1a1a;
-    --texto: #ffffff;
-    --texto-secundario: #94a3b8;
-    --sucesso: #10b981;
-    --perigo: #ef4444;
-    --alerta: #f59e0b;
-}
+        --primaria: #8b5cf6;
+        --primaria-dark: #7c3aed;
+        --primaria-light: #a78bfa;
+        --secondaria: #67e8f9;
+        --branco: #ffffff;
+        --branco-light: #b99db6;
+        --texto: #000000;
+        --texto-secundario: #000000;
+        --sucesso: #10b981;
+        --perigo: #ef4444;
+        --alerta: #f59e0b;
+    }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background: var(--preto);
+body{
+    font-family:'Inter', sans-serif;
+    background: var(--branco);
     color: var(--texto);
     overflow-x: hidden;
     line-height: 1.6;
 }
 
+
 #cabecalho {
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
-    padding: 20px 5%;
-    background: var(--preto);
-    backdrop-filter: blur(50px);
+    background-color: var(--branco);
     z-index: 1000;
     transition: all 0.3s ease;
+    border-bottom: 2px solid var(--primaria);
+    left: 0;
+}
+
+.cabecalho-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 .cabecalho-container {
@@ -53,16 +64,20 @@ body {
 
 .cabecalho-links {
     display: flex;
-    gap: 40px;
+    gap: 24px;
     align-items: center;
 }
 
 .cabecalho-links a {
-    color: var(--texto);
+    color: var(--texto-secundario);
     text-decoration: none;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: color 0.3s, box-shadow 0.3s, background 0.3s, transform 0.3s;
     position: relative;
+}
+
+#login{
+    color: var(--branco);
 }
 
 .cabecalho-links a::after {
@@ -72,151 +87,24 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--primaria-light);
+    background: var(--branco);
     transition: width 0.3s ease;
 }
 
 .cabecalho-links a:hover {
-    color: var(--texto);
+    color: var(--primaria-dark);
+    transition: left 0.5s ease;
+    transform: translateY(-2px);
 }
 
 .cabecalho-links a:hover::after {
     width: 100%;
 }
 
-/* Formulário de Cadastro */
-
-
-#login {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-
-}
-
-.login-container {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-}
-
-.imagem-login {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 60%;
-    height: 100%;
-    background-color: var(--preto-light);
-}
-
-.imagem-conteudo {
-    margin-left: 12%;
-}
-
-.imagem-conteudo h1 {
-    font-size: 36px;
-}
-
-.imagem-conteudo h2 {
-    font-size: 28px;
-}
-
-.formulario-login {
-    display: flex;
-    align-items: center;
-    width: 40%;
-    height: 100%;
-}
-
-.formulario-conteudo {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 80px;
-}
-
-.formulario {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-.formulario p a {
-    color: var(--primaria);
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.formulario a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primaria-light);
-    transition: width 0.3s ease;
-}
-
-.formulario a:hover {
-    color: var(--texto);
-}
-
-.formulario a:hover::after {
-    width: 100%;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
-    gap: 20px;
-}
-
-.formulario-grupo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-}
-
-.formulario-grupo input {
-    height: 40px;
-    width: 300px;
-    border-radius: 8px;
-    border-style: none;
-}
-
-.formulario-botao {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-/* .formulario-botao button {
-    padding: 10px 25px;
-    border-style: none;
-    border-radius: 8px;
-} */
-
-.botao-login {
+.botao-principal {
     background: linear-gradient(135deg, var(--primaria), var(--primaria-dark));
-    color: white;
-    padding: 12px 30px;
+    color: var(--branco);
+    padding: 7px 30px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
@@ -226,69 +114,211 @@ form {
     overflow: hidden;
 }
 
-.botao-login::before {
+.botao-secundario {
+    background: #fff;
+    border: 2px solid var(--primaria);
+    color: var(--primaria);
+    padding: 7px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 1s ease;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.12);
+}
+
+.botao-principal::before {
     content: '';
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2)transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2)transparent);
     transition: left 0.5s ease;
 }
 
-.botao-login:hover::before {
+.botao-principal:hover::before {
     left: 100%;
 }
 
-.botao-login:hover {
+.botao-principal:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
 }
 
-/* responsividade */
+.botao-secundario::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(139,92,246,0.08), transparent);
+    transition: left 1s ease;
+}
 
-@media screen and (max-width: 768px) {
-    .login-container {
-        flex-direction: column; 
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
+.botao-secundario:hover::before {
+    left: 100%;
+}
+
+.botao-secundario:hover {
+    background: var(--primaria);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+}
+
+#cadastro:hover{
+    color: var(--branco);
+}
+
+.botoes {
+    display: flex;
+    gap: 14px;
+    animation: fadeInUp 1s ease 0.4s both;
+    justify-content: center;
+}
+
+.cabecalho-links .botao-principal{
+    color: var(--texto);
+}
+
+/* Container Principal (cadastro) */
+.cadastro {
+    display: flex;
+    min-height: 100vh;
+    padding-top: 100px; /* Para evitar que o conteúdo fique atrás do cabeçalho fixo */
+}
+
+/* Container da Esquerda */
+.esquerda-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--texto);
+    padding: 40;
+    text-align: center;
+}
+
+.esquerda-container .texto {
+    max-width: 400px;
+}
+
+.esquerda-container h3 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.esquerda-container p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+/* Container da Direita */
+.direita-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--branco);
+    padding: 20px;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    background: var(--branco);
+    border-radius: 12px;
+    box-shadow: 0px 10px 40px var(--primaria);
+    animation: fadeInRight 1s ease-out;
+}
+
+.form-title {
+    font-size: 2em;
+    font-weight: 600;
+    text-align: center;
+    color: var(--texto);
+    margin-bottom: 30px;
+}
+
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--texto-secundario);
+}
+
+.form-input {
+    width: 100%;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primaria);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--primaria);
+    color: var(--branco);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background: var(--primaria-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: var(--texto-secundario);
+}
+
+.login-link a {
+    color: var(--primaria);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .cadastro {
+        flex-direction: column;
     }
-
-    .imagem-login {
-        display: none; 
+    .esquerda-container {
+        min-height: 250px;
+        padding: 40px 20px;
     }
-
-    .formulario-login {
-        width: 100%; 
-        max-width: 500px; 
-    }
-
-    .formulario-conteudo {
-        padding: 30px 20px;
-    }
-
-    .formulario-conteudo h1 {
-        font-size: 1.8rem;
-        text-align: center;
-    }
-
-    .formulario-grupo input {
-        width: 100%;
-        padding: 12px;
-        font-size: 1rem;
-    }
-
-    .formulario-botao .botao-login {
-        display: block;
-        width: 100%;
-        text-align: center;
-        padding: 12px;
-    }
-
-    .formulario p {
-        text-align: center;
-        font-size: 0.95rem;
+    .direita-section {
+        min-height: 100vh;
+        padding: 40px 20px;
     }
 }

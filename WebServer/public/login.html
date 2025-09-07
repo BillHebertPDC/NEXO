@@ -1,56 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXO - Login</title>
-
-    <link rel="stylesheet" href="./css/login.css">
+    <title>Login - Nexo</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <div id="cabecalho">
         <div class="cabecalho-container">
             <div class="logo"><img id="logo" src="./assets/imgs/Nexo-Logo.png" alt="Nexo-Logo"></div>
             <div class="cabecalho-links" id="cabecalhoLinks">
-                <a href="#">Início</a>
+                <a href="index.html#sobre-nos">Sobre nós</a>
+                <a href="#recursos">Recursos</a>
+                <a href="#calculadora">Calculadora ROI</a>
+                <a href="#clientes">Clientes</a>
+                <a href="#comentarios">Depoimentos</a>
+                <a href="#contado">Contato</a>
+                <a href="login.html" class="botao-principal" id="login">Login</a>
+                <a href="cadastro.html" class="botao-secundario" id="cadastro">Cadastro</a>
             </div>
         </div>
     </div>
 
-    <div id="login">
-        <div class="login-container">
-            <div class="imagem-login">
-                <div class="imagem-conteudo">
-                    <h1>Bem vindo de volta!</h1>
-                    <h2>Faça seu login e veja os seus totens.</h2>
-                </div>
+    <div class="cadastro">
+        <div class="esquerda-container">
+            <div class="texto">
+                <h3>Bem-vindo de volta</h3>
+                <p>Faça seu login e volta a ver seu desempenho</p>
             </div>
-            <div class="formulario-login">
-                <div class="formulario-conteudo">
-                    <h1>Portal do Cliente</h1>
-                    <div class="formulario">
-                        <form action="/login" method="post">
-                            <div class="formulario-grupo">
-                                <label for="id">ID:</label>
-                                <input type="number" id="id" name="id" required>
-                            </div>
-                            <div class="formulario-grupo">
-                                <label for="senha">Senha:</label>
-                                <input type="password" id="senha" name="senha" required>
-                            </div>
-                            <div class="formulario-botao">
-                                <a class="botao-login" onclick="">Entrar</a>
-                            </div>
-                        </form>
-                        <p>Ainda não tem uma conta? <a href="#">Cadastre-se agora</a>!</p>
+        </div>
+
+        <div class="direita-section">
+            <div class="form-container">
+                <h1 class="form-title">Entrar</h1>
+                
+                <form id="cadastroForm">
+                    <div class="form-group">
+                        <label for="nome">Email:</label>
+                        <input type="text" id="nome" name="nome" class="form-input" placeholder="Digite seu nome completo" required>
                     </div>
-                </div>
+
+                    <div class="form-group">
+                        <label for="cpf">Senha:</label>
+                        <input type="text" id="cpf" name="cpf" class="form-input" placeholder="Digite seu CNPJ" required>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Criar conta</button>
+
+                    <div class="login-link">
+                        Já tem uma conta? <a href="login.html">Entrar</a>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 
+    <script>
+    </script>
 </body>
-
 </html>
