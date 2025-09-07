@@ -5,37 +5,47 @@
 }
 
 :root {
-    --primaria: #8b5cf6;
-    --primaria-dark: #7c3aed;
-    --primaria-light: #a78bfa;
-    --secondaria: #06b6d4;
-    --preto: #0f0f0f;
-    --preto-light: #1a1a1a;
-    --texto: #ffffff;
-    --texto-secundario: #94a3b8;
-    --sucesso: #10b981;
-    --perigo: #ef4444;
-    --alerta: #f59e0b;
-}
+        --primaria: #8b5cf6;
+        --primaria-dark: #7c3aed;
+        --primaria-light: #a78bfa;
+        --secondaria: #67e8f9;
+        --branco: #ffffff;
+        --branco-light: #b99db6;
+        --texto: #000000;
+        --texto-secundario: #000000;
+        --sucesso: #10b981;
+        --perigo: #ef4444;
+        --alerta: #f59e0b;
+    }
 
 body{
     font-family:'Inter', sans-serif;
-    background: var(--preto);
+    background: var(--branco);
     color: var(--texto);
     overflow-x: hidden;
     line-height: 1.6;
 }
 
+
 #cabecalho {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 0px 5%;
-    background: rgba(15, 15, 15, 0.8);
-    backdrop-filter: blur(50px);
+    background-color: var(--branco);
     z-index: 1000;
     transition: all 0.3s ease;
-    border-bottom: #a78bfa 2px solid;
+    border-bottom: 2px solid var(--primaria);
+    left: 0;
+}
+
+.cabecalho-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 .cabecalho-container {
@@ -54,7 +64,7 @@ body{
 
 .cabecalho-links {
     display: flex;
-    gap: 40px;
+    gap: 24px;
     align-items: center;
 }
 
@@ -62,8 +72,12 @@ body{
     color: var(--texto-secundario);
     text-decoration: none;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: color 0.3s, box-shadow 0.3s, background 0.3s, transform 0.3s;
     position: relative;
+}
+
+#login{
+    color: var(--branco);
 }
 
 .cabecalho-links a::after {
@@ -73,16 +87,102 @@ body{
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--primaria-light);
+    background: var(--branco);
     transition: width 0.3s ease;
 }
 
 .cabecalho-links a:hover {
-    color: var(--texto);
+    color: var(--primaria-dark);
+    transition: left 0.5s ease;
+    transform: translateY(-2px);
 }
 
 .cabecalho-links a:hover::after {
     width: 100%;
+}
+
+.botao-principal {
+    background: linear-gradient(135deg, var(--primaria), var(--primaria-dark));
+    color: var(--branco);
+    padding: 7px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.botao-secundario {
+    background: #fff;
+    border: 2px solid var(--primaria);
+    color: var(--primaria);
+    padding: 7px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 1s ease;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.12);
+}
+
+.botao-principal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2)transparent);
+    transition: left 0.5s ease;
+}
+
+.botao-principal:hover::before {
+    left: 100%;
+}
+
+.botao-principal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+}
+
+.botao-secundario::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(139,92,246,0.08), transparent);
+    transition: left 1s ease;
+}
+
+.botao-secundario:hover::before {
+    left: 100%;
+}
+
+.botao-secundario:hover {
+    background: var(--primaria);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+}
+
+#cadastro:hover{
+    color: var(--branco);
+}
+
+.botoes {
+    display: flex;
+    gap: 14px;
+    animation: fadeInUp 1s ease 0.4s both;
+    justify-content: center;
+}
+
+.cabecalho-links .botao-principal{
+    color: var(--texto);
 }
 
 @font-face{

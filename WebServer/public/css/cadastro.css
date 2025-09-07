@@ -1,3 +1,34 @@
+@media (max-width: 600px) {
+    #cabecalho {
+        padding: 10px 2%;
+    }
+    .cadastro {
+        flex-direction: column;
+        padding-top: 80px;
+    }
+    .esquerda-container {
+        min-height: 180px;
+        padding: 24px 10px;
+        text-align: left;
+    }
+    .direita-section {
+        min-height: 100vh;
+        padding: 24px 10px;
+    }
+    .form-container {
+        padding: 16px 8px;
+        max-width: 100%;
+    }
+    .form-title {
+        font-size: 1.3em;
+    }
+    .esquerda-container h3 {
+        font-size: 1.5em;
+    }
+    .esquerda-container p {
+        font-size: 1em;
+    }
+}
 *{
     margin: 0;
     padding: 0;
@@ -199,25 +230,19 @@ body{
     align-items: center;
     justify-content: center;
     color: var(--texto);
-    padding: 40;
+    padding: 47px;
     text-align: center;
 }
 
-.esquerda-container .texto {
-    max-width: 400px;
-}
-
 .esquerda-container h3 {
-    font-size: 2.5em;
-    font-weight: 700;
-    margin-bottom: 20px;
-    animation: fadeInUp 1s ease-out;
+    font-size: 40px;
+    font-weight: 800px;
+    text-align: left;
 }
 
 .esquerda-container p {
-    font-size: 1.1em;
-    line-height: 1.8;
-    animation: fadeInUp 1.2s ease-out;
+    font-size: 18px;
+    text-align: left;
 }
 
 /* Container da Direita */
@@ -226,7 +251,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--branco);
     padding: 20px;
 }
 
@@ -235,10 +259,8 @@ body{
     max-width: 450px;
     padding: 20px;
     margin-top: 20px;
-    background: var(--branco);
     border-radius: 12px;
     box-shadow: 0px 10px 40px var(--primaria);
-    animation: fadeInRight 1s ease-out;
 }
 
 .form-title {
@@ -253,13 +275,13 @@ body{
 .form-group label {
     display: block;
     font-weight: 500;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
     color: var(--texto-secundario);
 }
 
 .form-input {
     width: 100%;
-    padding: 5px 10px;
+    padding: 10px 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 1em;
@@ -309,6 +331,10 @@ body{
     text-decoration: underline;
 }
 
+.destaque{
+    color: var(--primaria);
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     .cadastro {
@@ -321,5 +347,36 @@ body{
     .direita-section {
         min-height: 100vh;
         padding: 40px 20px;
+    }
+    .cabecalho-links {
+        display: none !important;
+    }
+    .cadastro {
+        flex-direction: column;
+        padding-top: 80px;
+    }
+    .esquerda-container {
+        min-height: 180px;
+        padding: 24px 10px 24px 10px;
+        text-align: left;
+        margin-bottom: 0;
+    }
+    .direita-section {
+        min-height: 100vh;
+        padding: 24px 10px;
+        margin-top: -24px;
+    }
+    .form-container {
+        padding: 16px 8px;
+        max-width: 100%;
+    }
+    .form-title {
+        font-size: 1.3em;
+    }
+    .esquerda-container h3 {
+        font-size: 1.5em;
+    }
+    .esquerda-container p {
+        font-size: 1em;
     }
 }

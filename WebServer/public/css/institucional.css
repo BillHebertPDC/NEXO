@@ -787,83 +787,194 @@ footer {
     color: var(--primaria);
 }
 
+#btn-especialista:hover{
+    color: var(--branco);
+}
+
+
+/* Tablets (768px - 1024px) */
 @media (max-width: 1024px) {
-.inicio-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
-}
-
-.calculadora-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
-}
-
-.footer-container {
-    grid-template-columns: repeat(2, 1fr);
+    .calculadora-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
-}
 
-@media (max-width: 768px) {
-
-.cabecalho-links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 80%;
-    height: 100vh;
-    background: var(--dark-light);
-    flex-direction: column;
-    justify-content: center;
-    padding: 40px;
-    transition: right 0.3s ease;
-}
-
-.cabecalho-links.active {
-    right: 0;
-}
-
-.inicio h1 {
-    font-size: 2.5rem;
-}
-
-.recusos-container {
-    grid-template-columns: 1fr;
-}
-
-.comentarios-containainer {
-    grid-template-columns: 1fr;
-}
-
-.footer-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
-}
-
-.contado-container {
-    padding: 60px 30px;
-}
-}
-
-@media (max-width: 900px) {
-    .sobre-nos {
-        flex-direction: column;
-        gap: 20px;
-        padding: 30px 5%;
-    }
-    .nos-imagem {
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 10px;
-        min-height: auto;
-    }
-    .nos-imagem img {
-        max-height: 120px;
-        height: auto;
-    }
     .sobre-nos-container {
-        flex-direction: column;
-        align-items: center;
-        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .cabecalho-links {
+        gap: 15px;
+    }
+
+    .cabecalho-links a {
+        font-size: 0.9rem;
+    }
+
+    .botao-principal,
+    .botao-secundario {
+        padding: 8px 20px;
+        font-size: 0.9rem;
     }
 }
 
+/* Mobile (até 768px) */
+@media (max-width: 768px) {
+    .cabecalho-links {
+        display: none;
+    }
+
+    .inicio {
+        padding: 100px 5% 60px;
+    }
+
+    .recursos {
+        padding: 60px 5%;
+    }
+
+    .recusos-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .calculadora-secao {
+        padding: 60px 5%;
+    }
+
+    .calc-resultado {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .comentarios-containainer {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .botoes {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .botoes a {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+        padding: 12px 20px;
+    }
+
+    .clientes-slider .swiper-wrapper {
+        align-items: center;
+    }
+}
+
+/* Mobile pequeno (até 480px) */
+@media (max-width: 480px) {
+    #cabecalho {
+        padding: 5px 0;
+    }
+
+    .cabecalho-container {
+        padding: 0 4%;
+    }
+
+    .inicio {
+        padding: 80px 4% 40px;
+        min-height: 80vh;
+    }
+
+    .sobre-nos,
+    .recursos,
+    .calculadora-secao,
+    .comentarios,
+    .contado {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .calculadora-box {
+        padding: 20px 15px;
+    }
+
+    .calculadora-input-grupo {
+        margin-bottom: 20px;
+    }
+
+    .calc-resultado {
+        gap: 10px;
+        margin-top: 20px;
+        padding-top: 20px;
+    }
+
+    .resultado-item {
+        padding: 15px 10px;
+    }
+
+    .comentario-card {
+        padding: 20px 15px;
+    }
+
+    .autor-avatar {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contado-container {
+        padding: 40px 20px;
+    }
+
+    /* Slider de clientes mais compacto */
+    .cliente-logo {
+        height: clamp(60px, 12vw, 120px);
+    }
+
+    /* Texto menor em telas muito pequenas */
+    .inicio-text p,
+    .recursos-descricao,
+    .calculadora-texto p,
+    .section-description,
+    .contado p {
+        font-size: clamp(0.9rem, 2vw, 1rem);
+    }
+}
+
+/* Ajustes específicos para telas muito pequenas */
+@media (max-width: 360px) {
+    .logo img {
+        height: 50px;
+    }
+
+    .calculadora-box h3 {
+        font-size: 1.2rem;
+    }
+
+    .resultado-value {
+        font-size: 1rem;
+    }
+
+    .comentario-autor {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}
+
+/* Ajustes para telas grandes */
+@media (min-width: 1400px) {
+    .cabecalho-container,
+    .inicio-container,
+    .sobre-nos,
+    .recursos,
+    .calculadora-container,
+    .comentarios {
+        max-width: 1400px;
+    }
+
+    .recursos-titulo,
+    .calculadora-texto h2,
+    .contado h2 {
+        font-size: 3.2rem;
+    }
+}
