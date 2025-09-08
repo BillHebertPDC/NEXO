@@ -308,7 +308,7 @@ body{
     color: var(--primaria-dark) !important;
 }
 
-/* Label ao lado do input */
+/* Label ao lado do input
 .form-group {
     display: flex;
     align-items: center;
@@ -324,6 +324,7 @@ body{
 .form-group input {
     flex: 1;
 }
+*/
 
 /* Responsividade */
 @media (max-width: 768px) {
