@@ -1,34 +1,3 @@
-@media (max-width: 600px) {
-    #cabecalho {
-        padding: 10px 2%;
-    }
-    .cadastro {
-        flex-direction: column;
-        padding-top: 80px;
-    }
-    .esquerda-container {
-        min-height: 180px;
-        padding: 24px 10px;
-        text-align: left;
-    }
-    .direita-section {
-        min-height: 100vh;
-        padding: 24px 10px;
-    }
-    .form-container {
-        padding: 16px 8px;
-        max-width: 100%;
-    }
-    .form-title {
-        font-size: 1.3em;
-    }
-    .esquerda-container h3 {
-        font-size: 1.5em;
-    }
-    .esquerda-container p {
-        font-size: 1em;
-    }
-}
 *{
     margin: 0;
     padding: 0;
@@ -337,6 +306,27 @@ body{
     color: var(--primaria);
 }
 
+.login-link a:hover {
+    color: var(--primaria-dark) !important;
+}
+
+/* Label ao lado do input */
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+.form-group label {
+    min-width: 60px;
+    text-align: left;
+    margin-bottom: 0;
+    font-weight: 500;
+}
+.form-group input {
+    flex: 1;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     .cadastro {
@@ -367,6 +357,38 @@ body{
         min-height: 100vh;
         padding: 24px 10px;
         margin-top: -24px;
+    }
+    .form-container {
+        padding: 16px 8px;
+        max-width: 100%;
+    }
+    .form-title {
+        font-size: 1.3em;
+    }
+    .esquerda-container h3 {
+        font-size: 1.5em;
+    }
+    .esquerda-container p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 600px) {
+    #cabecalho {
+        padding: 10px 2%;
+    }
+    .cadastro {
+        flex-direction: column;
+        padding-top: 80px;
+    }
+    .esquerda-container {
+        min-height: 180px;
+        padding: 24px 10px;
+        text-align: left;
+    }
+    .direita-section {
+        min-height: 100vh;
+        padding: 24px 10px;
     }
     .form-container {
         padding: 16px 8px;
