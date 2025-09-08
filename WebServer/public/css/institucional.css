@@ -867,6 +867,7 @@ footer {
     .clientes-slider .swiper-wrapper {
         align-items: center;
     }
+
 }
 
 /* Mobile pequeno (até 480px) */
@@ -1043,3 +1044,4 @@ body.dark-mode {
 footer.dark-mode {
     background: var(--branco-light);
 }
+
