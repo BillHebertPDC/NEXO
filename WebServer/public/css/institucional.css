@@ -760,8 +760,7 @@ body{
 
 footer {
     background: var(--branco);
-    padding: 60px 5% 30px;
-    border-top: 5px solid rgba(139, 92, 246, 0.1);
+    padding: 30px 30px;
 }
 
 .footer-container {
@@ -779,7 +778,7 @@ footer {
 .footer-final {
     text-align: center;
     padding-top: 30px;
-    border-top: 5px solid rgba(139, 92, 246, 0.1);
+    border-top: 2px solid var(--primaria);
     color: var(--texto-secundario);
 }
 
@@ -977,4 +976,70 @@ footer {
     .contado h2 {
         font-size: 3.2rem;
     }
+}
+
+.dark-mode {
+    --primaria: #8b5cf6;
+    --primaria-dark: #7c3aed;
+    --primaria-light: #a78bfa;
+    --secondaria: #06b6d4;
+    --branco: #0f0f0f;
+    --branco-light: #1a1a1a;
+    --texto: #ffffff;
+    --texto-secundario: #94a3b8;
+    --sucesso: #10b981;
+    --perigo: #ef4444;
+    --alerta: #f59e0b;
+}
+
+body.dark-mode {
+    background: var(--branco);
+    color: var(--texto);
+}
+
+#cabecalho.dark-mode {
+    background: rgba(15, 15, 15, 0.8);
+    backdrop-filter: blur(50px);
+}
+
+.cabecalho-links.dark-mode a {
+    color: var(--texto-secundario);
+}
+
+.cabecalho-links.dark-mode a:hover {
+    color: var(--texto);
+}
+
+.botao-principal.dark-mode {
+    color: white;
+}
+
+.botao-secundario.dark-mode {
+    background: transparent;
+    color: var(--primaria);
+}
+
+.inicio.dark-mode {
+    background: url('../assets/imgs/fundo\ inicio.png') no-repeat center center;
+    background-size: cover;
+}
+
+.recurso-card.dark-mode {
+    background: rgba(26, 26, 26, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+.calculadora-box.dark-mode {
+    background: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(20px);
+}
+
+.comentario-card.dark-mode {
+    background: rgba(26, 26, 26, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+footer.dark-mode {
+    background: var(--branco-light);
 }

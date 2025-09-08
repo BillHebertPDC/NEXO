@@ -16,12 +16,12 @@
                 <a href="#sobre-nos">Sobre nós</a>
                 <a href="#recursos">Recursos</a>
                 <a href="#calculadora">Calculadora ROI</a>
-                <a href="#diagrama">Diagrama</a>
                 <a href="#clientes">Clientes</a>
                 <a href="#comentarios">Depoimentos</a>
                 <a href="#contado">Contato</a>
                 <a href="login.html" class="botao-principal" id="login">Login</a>
                 <a href="cadastro.html" class="botao-secundario" id="cadastro">Cadastro</a>
+            <button id="toggle-theme">🌙</button>
             </div>
         </div>
     </div>
@@ -94,7 +94,7 @@
         <div class="calculadora-container">
             <div class="calculadora-texto">
                 <h2>Calcule seu ROI em Tempo Real</h2>
-                <p>Descubra quanto sua empresa pode economizar com o Nexo. Nossa plataforma reduz em até 87% os custos com manutenção e aumenta o uptime para 99.9%.</p>
+                <p>Descubra quanto sua empresa pode economizar com o Nexo. Nossa plataforma reduz em até 70% os custos com manutenção e aumenta o uptime para 99.9%.</p>
                 <ul style="list-style: none; padding: 0;">
                     <li style="margin-bottom: 15px;">✅ Redução de 87% em visitas técnicas</li>
                     <li style="margin-bottom: 15px;">✅ Aumento de 45% na vida útil dos equipamentos</li>
@@ -173,40 +173,49 @@
             <h2 class="section-title">O que Nossos Clientes Dizem</h2>
             <p class="section-description">Histórias reais de transformação e sucesso com o Nexo.</p>
         </div>
-        <div class="comentarios-containainer">
-            <div class="comentario-card">
-                <div class="comentario-estrela">⭐⭐⭐⭐⭐</div>
-                <p class="comentario-texto">"O Nexo revolucionou nossa operação. Reduzimos em 90% as paradas não programadas e aumentamos nossa receita em 35% no primeiro trimestre."</p>
-                <div class="comentario-autor">
-                    <div class="autor-avatar"> <img src="https://imgs.search.brave.com/nLEl2dwR531Gz-8ZHE0I9wB5bUjqtoQ9zsgzaoAfhSw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90b3MtZ3JhdGlz/L2Nsb3NlLWRlLXVt/LWhvbWVtLW5lZ3Jv/LXNvcnJpZGVudGUt/ZW0tZnJlbnRlLWEt/dW0tZnVuZG8tbWFy/cm9tLWNvbmNlaXRv/LWRlLWZlbGljaWRh/ZGVfMTgxNjI0LTUz/MjkxLmpwZz9zZW10/PWFpc19oeWJyaWQm/dz03NDAmcT04MA" alt=""></div>
-                    <div class="autor-info">
-                        <div class="autor-nome">Carlos Silva</div>
-                        <div class="autor-cargo">CTO - InteraPoint</div>
+        <div class="swiper depoimentos-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="comentario-card">
+                        <div class="comentario-estrela">⭐⭐⭐⭐⭐</div>
+                        <p class="comentario-texto">"O Nexo revolucionou nossa operação. Reduzimos em 90% as paradas não programadas e aumentamos nossa receita em 35% no primeiro trimestre."</p>
+                        <div class="comentario-autor">
+                            <div class="autor-avatar"> <img src="https://imgs.search.brave.com/nLEl2dwR531Gz-8ZHE0I9wB5bUjqtoQ9zsgzaoAfhSw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90b3MtZ3JhdGlz/L2Nsb3NlLWRlLXVt/LWhvbWVtLW5lZ3Jv/LXNvcnJpZGVudGUt/ZW0tZnJlbnRlLWEt/dW0tZnVuZG8tbWFy/cm9tLWNvbmNlaXRv/LWRlLWZlbGljaWRh/ZGVfMTgxNjI0LTUz/MjkxLmpwZz9zZW10/PWFpc19oeWJyaWQm/dz03NDAmcT04MA" alt=""></div>
+                            <div class="autor-info">
+                                <div class="autor-nome">Carlos Silva</div>
+                                <div class="autor-cargo">CTO - InteraPoint</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="comentario-card">
+                        <div class="comentario-rating">⭐⭐⭐⭐⭐</div>
+                        <p class="comentario-texto">"A previsão de falhas é impressionante. Conseguimos antecipar 95% dos problemas e nossa satisfação do cliente subiu para 98%."</p>
+                        <div class="comentario-autor">
+                            <div class="autor-avatar"><img src="https://imgs.search.brave.com/gdv7fVEXIhYO6RAHVohibqbZOHedUDLho5DpcNSGfsw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90b3MtZ3JhdGlz/L211bGhlci1hc2lh/dGljYS1hLWZhemVy/LWNhbXBhbmhhLWRl/LWJlbGV6YS1lbXBv/ZGVyYWRvcmFfNDgy/MjU3LTc0NDU3Lmpw/Zz9zZW10PWFpc19o/eWJyaWQmdz03NDAm/cT04MA" alt=""></div>
+                            <div class="autor-info">
+                                <div class="autor-nome">Ana Costa</div>
+                                <div class="autor-cargo">Diretora de Operações - SmartTotem</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="comentario-card">
+                        <div class="comentario-rating">⭐⭐⭐⭐⭐</div>
+                        <p class="comentario-texto">"O suporte é excepcional e a plataforma é intuitiva. Melhor investimento que fizemos este ano."</p>
+                        <div class="comentario-autor">
+                            <div class="autor-avatar"><img src="assets/imgs/Captura de tela 2025-09-06 030911.png" alt=""></div>
+                            <div class="autor-info">
+                                <div class="autor-nome">Roberto Lima</div>
+                                <div class="autor-cargo">CEO - Biq</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="comentario-card">
-                <div class="comentario-rating">⭐⭐⭐⭐⭐</div>
-                <p class="comentario-texto">"A previsão de falhas é impressionante. Conseguimos antecipar 95% dos problemas e nossa satisfação do cliente subiu para 98%."</p>
-                <div class="comentario-autor">
-                    <div class="autor-avatar"><img src="https://imgs.search.brave.com/gdv7fVEXIhYO6RAHVohibqbZOHedUDLho5DpcNSGfsw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/Zm90b3MtZ3JhdGlz/L211bGhlci1hc2lh/dGljYS1hLWZhemVy/LWNhbXBhbmhhLWRl/LWJlbGV6YS1lbXBv/ZGVyYWRvcmFfNDgy/MjU3LTc0NDU3Lmpw/Zz9zZW10PWFpc19o/eWJyaWQmdz03NDAm/cT04MA" alt=""></div>
-                    <div class="autor-info">
-                        <div class="autor-nome">Ana Costa</div>
-                        <div class="autor-cargo">Diretora de Operações - SmartTotem</div>
-                    </div>
-                </div>
-            </div>
-            <div class="comentario-card">
-                <div class="comentario-rating">⭐⭐⭐⭐⭐</div>
-                <p class="comentario-texto">"O suporte é excepcional e a plataforma é intuitiva. Melhor investimento que fizemos este ano."</p>
-                <div class="comentario-autor">
-                    <div class="autor-avatar"><img src="assets/imgs/Captura de tela 2025-09-06 030911.png" alt=""></div>
-                    <div class="autor-info">
-                        <div class="autor-nome">Roberto Lima</div>
-                        <div class="autor-cargo">CEO - Biq</div>
-                    </div>
-                </div>
-            </div>
+            <div class="swiper-pagination"></div>
         </div>
     </div>
 
@@ -260,34 +269,53 @@
 
     // Calculadora ROI - index.html
 function calcularROIIndex() {
-    const qtdTotens = Number(document.getElementById("totensInput").value) || 0;
-    const custoVisita = Number(document.getElementById("custoInput").value) || 0;
-    const gastoAtual = qtdTotens * custoVisita;
-    const economia = gastoAtual * 0.87;
-    document.getElementById('gastoAtual').textContent = `R$ ${gastoAtual.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+    const qtd = +document.getElementById("totensInput").value || 0;
+    const custo = +document.getElementById("custoInput").value || 0;
+    const gasto = qtd * custo;
+    const economia = gasto * 0.87;
+    document.getElementById('gastoAtual').textContent = `R$ ${gasto.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
     document.getElementById('economia').textContent = `R$ ${economia.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
 }
 
-// Adiciona evento ao botão da calculadora ROI
-const btnCalcularROI = document.getElementById('btnCalcularROI');
-if (btnCalcularROI) {
-    btnCalcularROI.addEventListener('click', function(e) {
-        e.preventDefault();
-        calcularROIIndex();
-    });
-}
+// Botão da calculadora ROI
+const btn = document.getElementById('btnCalcularROI');
+btn?.addEventListener('click', e => {
+    e.preventDefault();
+    calcularROIIndex();
+});
 
-// Sincroniza o slider com o input de quantidade de totens
-const totensInput = document.getElementById('totensInput');
-const totensSlider = document.getElementById('totensSlider');
-if (totensInput && totensSlider) {
-    totensSlider.addEventListener('input', () => {
-        totensInput.value = totensSlider.value;
-    });
-    totensInput.addEventListener('input', () => {
-        totensSlider.value = totensInput.value;
-    });
-}
+// Sincroniza slider e input
+document.getElementById('totensSlider')?.addEventListener('input', e => {
+    document.getElementById('totensInput').value = e.target.value;
+});
+document.getElementById('totensInput')?.addEventListener('input', e => {
+    document.getElementById('totensSlider').value = e.target.value;
+});
+
+// Slider para depoimentos
+const depoimentosSwiper = new Swiper('.depoimentos-slider', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    allowTouchMove: false,
+    speed: 6000, // velocidade alta para rolar continuamente
+    autoplay: {
+        delay: 0, // sem pausa
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+});
+
+
+// Alternância de tema claro/escuro
+const themeButton = document.getElementById('toggle-theme');
+themeButton.addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+    themeButton.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+});
 </script>
 
 
